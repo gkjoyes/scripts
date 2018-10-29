@@ -38,12 +38,16 @@ fi
 app=$1
 if [[ $app == google-chrome ]]; then
   process_name=chrome
+elif [[ $app == terminator ]]; then # Seems like terminator will work with out special name
+  process_name=terminator
 elif [[ $app == code ]]; then
   process_name=usr/share/code/code
+elif [[ $app == atom ]]; then
+  process_name=usr/share/atom/atom
 elif [[ $app == spotify ]]; then
   process_name=usr/share/spotify/spotify
 elif [[ $app == slack ]]; then
-  process_name=usr/lib/slack/slack
+  process_name=slack
 elif [[ $app == pac ]]; then
   process_name=usr/bin/pac
 elif [[ $app == subl ]]; then
@@ -54,7 +58,6 @@ fi
 
 # Check if the app is running.
 pid=$(pgrep -f -o $process_name)
-foc=$(xdotool getactivewindow getwindowpid)
 
 # If it isn't launched, then launch.
 if [ -z $pid ]; then
