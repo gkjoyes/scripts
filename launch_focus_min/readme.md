@@ -16,7 +16,6 @@ To launch an application or to show its window if already launched or to minimiz
 
 3) Make your keyboard shortcut:
 
-
     - Open your keyboard settings and create a custom shortcut with the command:
 
         ```sh
